@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
 
-
-
 class AddPhoto extends Component {
 
     constructor() {
@@ -23,7 +21,7 @@ class AddPhoto extends Component {
         }
 
         if (description && imageLink) {
-            this.props.addPost(post);
+            this.props.startAddingPost(post)
             this.props.onHistory.push('/');
         }
 

@@ -4,14 +4,18 @@ import PhotoWall from './PhotoWall.js';
 import AddPhoto from './AddPhoto.js';
 import { Route, Link } from 'react-router-dom';
 import { removePost } from '../redux/actions';
+import Single from './Single';
+
 
 class Main extends Component {
 
-    constructor() {
-        super()
-    }
-    componentDidMount() {
+    state = { loading: true }
 
+    componentDidMount() {
+        this.props.startLoadingPost().then(() => {
+            this.setState({loading: false})
+        })
+        this.props.startLoadingComments()
     }
     render() {
         return (
@@ -24,9 +28,13 @@ class Main extends Component {
                         <PhotoWall {...this.props} />
                     </div>
                 )} />
-                {/* <Route path='/create' render={(params) => (<AddPost {...this.props}{...params} />)} /> */}
                 <Route path="/AddPhoto" render={({ history }) => (
                     <AddPhoto  {...this.props} onHistory={history} />
+                )} />
+                <Route exact path="/single/:id" render={(params) => (
+                    <div>
+                        <Single loading={this.state.loading} {...this.props} {...params} />
+                    </div>
                 )} />
             </div>
         )
