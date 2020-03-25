@@ -1,9 +1,9 @@
 # react-photowall
 This is a project with goal to understant better concepts about React and Redux, based on Udemy course, info:
 
-Title: The Complete React Js & Redux Course - Build Modern Web Apps
-Instructor: Rob Percival
-Hours: 8,5
+Title: The Complete React Js & Redux Course - Build Modern Web Apps <br/>
+Instructor: Rob Percival <br/>
+Hours: 8,5 <br/>
 
 Objectives of this course
 
